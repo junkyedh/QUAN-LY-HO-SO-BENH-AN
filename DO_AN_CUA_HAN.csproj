@@ -1,0 +1,1014 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props" Condition="Exists('packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A0746BB6-5C3B-4416-969C-AA2F2091580E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DO_AN_CUA_HAN</RootNamespace>
+    <AssemblyName>DO_AN_CUA_HAN</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.Charts.WinForms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.Charts.WinForms.1.0.1\lib\Bunifu.Charts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.Licensing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.Charts.WinForms.1.0.1\lib\Bunifu.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.1.5.3">
+      <HintPath>..\..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton">
+      <HintPath>..\..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox">
+      <HintPath>..\..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCircleProgress">
+      <HintPath>..\..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuColorTransition">
+      <HintPath>..\..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuColorTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
+      <HintPath>..\..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
+      <HintPath>..\..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
+      <HintPath>..\..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuFormDock">
+      <HintPath>..\..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGauge">
+      <HintPath>..\..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel">
+      <HintPath>..\..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGroupBox">
+      <HintPath>..\..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuGroupBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
+      <HintPath>..\..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
+      <HintPath>..\..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPages">
+      <HintPath>..\..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPanel">
+      <HintPath>..\..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
+      <HintPath>..\..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar">
+      <HintPath>..\..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton">
+      <HintPath>..\..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRating">
+      <HintPath>..\..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuRating.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar">
+      <HintPath>..\..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSeparator">
+      <HintPath>..\..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuSeparator.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuShadowPanel">
+      <HintPath>..\..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuShapes">
+      <HintPath>..\..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuShapes.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSlider">
+      <HintPath>..\..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSnackbar">
+      <HintPath>..\..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuSnackbar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
+      <HintPath>..\..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuToggleSwitch">
+      <HintPath>..\..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuToggleSwitch.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuToolTip">
+      <HintPath>..\..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuToolTip.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTransition">
+      <HintPath>..\..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuUserControl">
+      <HintPath>..\..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuUserControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.Deprecated">
+      <HintPath>..\..\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.Deprecated.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=7.0.6.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.7.0.6\lib\net462\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.1.1.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.Interfaces.6.1.1\lib\net462\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.System.Drawing.6.1.1\lib\net462\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IO.RecyclableMemoryStream.3.0.0\lib\netstandard2.0\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.160.1000.6\lib\net462\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Configuration.ConfigurationManager.8.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="zxing, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>packages\ZXing.Net.0.16.9\lib\net47\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>packages\ZXing.Net.0.16.9\lib\net47\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Barcode\Detection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Barcode\Detection.Designer.cs">
+      <DependentUpon>Detection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Barcode\Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Barcode\Info.Designer.cs">
+      <DependentUpon>Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chart\FormBarChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chart\FormBarChart.Designer.cs">
+      <DependentUpon>FormBarChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chart\FormBubbleChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chart\FormBubbleChart.Designer.cs">
+      <DependentUpon>FormBubbleChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chart\FormHorizontal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chart\FormHorizontal.Designer.cs">
+      <DependentUpon>FormHorizontal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chart\FormLineChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chart\FormLineChart.Designer.cs">
+      <DependentUpon>FormLineChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chart\Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chart\Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Excel\UserInfo.cs" />
+    <Compile Include="Funtional\SqlResult.cs" />
+    <Compile Include="Model\Assignment.cs" />
+    <Compile Include="Model\AssignmentDetail.cs" />
+    <Compile Include="Model\Bcrypt.cs" />
+    <Compile Include="Model\Bill.cs" />
+    <Compile Include="Model\BillType.cs" />
+    <Compile Include="Model\DbConnect.cs" />
+    <Compile Include="Model\Department.cs" />
+    <Compile Include="Model\DischargeCertificate.cs" />
+    <Compile Include="Model\Disease.cs" />
+    <Compile Include="Model\ExaminationCertificate.cs" />
+    <Compile Include="Model\HealthFile.cs" />
+    <Compile Include="Model\HeathMonitoringNote.cs" />
+    <Compile Include="Model\HIC.cs" />
+    <Compile Include="Model\HospitalBed.cs" />
+    <Compile Include="Model\HospitalizationCertificate.cs" />
+    <Compile Include="Model\Major.cs" />
+    <Compile Include="Model\Material.cs" />
+    <Compile Include="Model\Medicine.cs" />
+    <Compile Include="Model\MedicineBillDetail.cs" />
+    <Compile Include="Model\Patient.cs" />
+    <Compile Include="Model\Prescription.cs" />
+    <Compile Include="Model\PrescriptionDetail.cs" />
+    <Compile Include="Model\RentMaterialBillDetail.cs" />
+    <Compile Include="Model\Role.cs" />
+    <Compile Include="Model\RoleDetail.cs" />
+    <Compile Include="Model\RoleFuntion.cs" />
+    <Compile Include="Model\ResetPassword.cs" />
+    <Compile Include="Model\Service.cs" />
+    <Compile Include="Model\ServiceBillDetail.cs" />
+    <Compile Include="Model\Staff.cs" />
+    <Compile Include="Model\Surgical.cs" />
+    <Compile Include="Model\SurgicalDetail.cs" />
+    <Compile Include="Model\TestCertificate.cs" />
+    <Compile Include="Model\TestDetail.cs" />
+    <Compile Include="Model\TestType.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Report.cs">
+      <DependentUpon>Report.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="View\FormResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormResetPassword.Designer.cs">
+      <DependentUpon>FormResetPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormMainReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FormMainReport.Designer.cs">
+      <DependentUpon>FormMainReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormReport.Designer.cs">
+      <DependentUpon>FormReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormMainDisease.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FormMainDisease.Designer.cs">
+      <DependentUpon>FormMainDisease.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormMainRoleFunction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FormMainRoleFunction.Designer.cs">
+      <DependentUpon>FormMainRoleFunction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormRoleDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormRoleDetail.Designer.cs">
+      <DependentUpon>FormRoleDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormBillDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormBillDetail.Designer.cs">
+      <DependentUpon>FormBillDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormMajorDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormMajorDetail.Designer.cs">
+      <DependentUpon>FormMajorDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormMedicineDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormMedicineDetail.Designer.cs">
+      <DependentUpon>FormMedicineDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormPrescriptionDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormPrescriptionDetail.Designer.cs">
+      <DependentUpon>FormPrescriptionDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormService.Designer.cs">
+      <DependentUpon>FormService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormTestDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormTestDetail.Designer.cs">
+      <DependentUpon>FormTestDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormSurgicalDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormSurgicalDetail.Designer.cs">
+      <DependentUpon>FormSurgicalDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormAssignDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormAssignDetail.Designer.cs">
+      <DependentUpon>FormAssignDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormDiseaseDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormDiseaseDetail.Designer.cs">
+      <DependentUpon>FormDiseaseDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormECDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormECDetail.Designer.cs">
+      <DependentUpon>FormECDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormHFDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormHFDetail.Designer.cs">
+      <DependentUpon>FormHFDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormHNDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormHNDetail.Designer.cs">
+      <DependentUpon>FormHNDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormHospitalBedDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormHospitalBedDetail.Designer.cs">
+      <DependentUpon>FormHospitalBedDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormMaterialDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormMaterialDetail.Designer.cs">
+      <DependentUpon>FormMaterialDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormPatientDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormPatientDetail.Designer.cs">
+      <DependentUpon>FormPatientDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormStaffDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormStaffDetail.Designer.cs">
+      <DependentUpon>FormStaffDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormRoleFunctionDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormRoleFunctionDetail.Designer.cs">
+      <DependentUpon>FormRoleFunctionDetail.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Barcode\Detection.resx">
+      <DependentUpon>Detection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Barcode\Info.resx">
+      <DependentUpon>Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormResetPassword.resx">
+      <DependentUpon>FormResetPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormMainDisease.resx">
+      <DependentUpon>FormMainDisease.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormMainRoleFunction.resx">
+      <DependentUpon>FormMainRoleFunction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormRoleDetail.resx">
+      <DependentUpon>FormRoleDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormBillDetail.resx">
+      <DependentUpon>FormBillDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormMajorDetail.resx">
+      <DependentUpon>FormMajorDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormMedicineDetail.resx">
+      <DependentUpon>FormMedicineDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormPrescriptionDetail.resx">
+      <DependentUpon>FormPrescriptionDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormService.resx">
+      <DependentUpon>FormService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormTestDetail.resx">
+      <DependentUpon>FormTestDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormSurgicalDetail.resx">
+      <DependentUpon>FormSurgicalDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormRoleFunctionDetail.resx">
+      <DependentUpon>FormRoleFunctionDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="View\FormDCDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormDCDetail.Designer.cs">
+      <DependentUpon>FormDCDetail.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\FormDCDetail.resx">
+      <DependentUpon>FormDCDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="View\FormDepartmentDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormDepartmentDetail.Designer.cs">
+      <DependentUpon>FormDepartmentDetail.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\FormDepartmentDetail.resx">
+      <DependentUpon>FormDepartmentDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="View\FormHCDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormHCDetail.Designer.cs">
+      <DependentUpon>FormHCDetail.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\FormHCDetail.resx">
+      <DependentUpon>FormHCDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="View\FormHICDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormHICDetail.Designer.cs">
+      <DependentUpon>FormHICDetail.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\FormHICDetail.resx">
+      <DependentUpon>FormHICDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="View\FormLogin_SignUP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormLogin_SignUp.Designer.cs">
+      <DependentUpon>FormLogin_SignUP.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\FormLogin_SignUp.resx">
+      <DependentUpon>FormLogin_SignUP.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="View\FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="View\FormMainAssignment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FormMainAssignment.Designer.cs">
+      <DependentUpon>FormMainAssignment.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\FormMainAssignment.resx">
+      <DependentUpon>FormMainAssignment.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="View\FormMainBed.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FormMainBed.Designer.cs">
+      <DependentUpon>FormMainBed.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\FormMainBed.resx">
+      <DependentUpon>FormMainBed.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="View\FormMainBill.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FormMainBill.Designer.cs">
+      <DependentUpon>FormMainBill.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\FormMainBill.resx">
+      <DependentUpon>FormMainBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="View\FormMainDeptMajor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FormMainDeptMajor.Designer.cs">
+      <DependentUpon>FormMainDeptMajor.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\FormMainDeptMajor.resx">
+      <DependentUpon>FormMainDeptMajor.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="View\FormMainDischarged.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FormMainDischarged.Designer.cs">
+      <DependentUpon>FormMainDischarged.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\FormMainDischarged.resx">
+      <DependentUpon>FormMainDischarged.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="View\FormMainMedicine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FormMainMedicine.Designer.cs">
+      <DependentUpon>FormMainMedicine.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\FormMainMedicine.resx">
+      <DependentUpon>FormMainMedicine.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="View\FormMainPatient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FormMainPatient.Designer.cs">
+      <DependentUpon>FormMainPatient.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\FormMainPatient.resx">
+      <DependentUpon>FormMainPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="View\FormMainStaff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FormMainStaff.Designer.cs">
+      <DependentUpon>FormMainStaff.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\FormMainStaff.resx">
+      <DependentUpon>FormMainStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="View\FormMainSurgery.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FormMainSurgery.Designer.cs">
+      <DependentUpon>FormMainSurgery.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\FormMainSurgery.resx">
+      <DependentUpon>FormMainSurgery.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="View\FormMainHF.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FormMainHF.Designer.cs">
+      <DependentUpon>FormMainHF.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\FormMainHF.resx">
+      <DependentUpon>FormMainHF.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="View\FormMainEC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FormMainEC.Designer.cs">
+      <DependentUpon>FormMainEC.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\FormMainEC.resx">
+      <DependentUpon>FormMainEC.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="View\FormMainHospitalization.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FormMainHospitalization.Designer.cs">
+      <DependentUpon>FormMainHospitalization.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\FormMainHospitalization.resx">
+      <DependentUpon>FormMainHospitalization.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="View\FormMainMaterial.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FormMainMaterial.Designer.cs">
+      <DependentUpon>FormMainMaterial.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\FormMainMaterial.resx">
+      <DependentUpon>FormMainMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="View\FormMainMonitor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FormMainMonitor.Designer.cs">
+      <DependentUpon>FormMainMonitor.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\FormMainMonitor.resx">
+      <DependentUpon>FormMainMonitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="View\FormMainPrescription.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FormMainPrescription.Designer.cs">
+      <DependentUpon>FormMainPrescription.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\FormMainPrescription.resx">
+      <DependentUpon>FormMainPrescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="View\FormMainRole.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FormMainRole.Designer.cs">
+      <DependentUpon>FormMainRole.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\FormMainRole.resx">
+      <DependentUpon>FormMainRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="View\FormMainService.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FormMainService.Designer.cs">
+      <DependentUpon>FormMainService.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\FormMainService.resx">
+      <DependentUpon>FormMainService.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="View\FormMainTest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FormMainTest.Designer.cs">
+      <DependentUpon>FormMainTest.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\FormMainTest.resx">
+      <DependentUpon>FormMainTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Excel\FormMainExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Excel\FormMainExcel.Designer.cs">
+      <DependentUpon>FormMainExcel.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Excel\FormMainExcel.resx">
+      <DependentUpon>FormMainExcel.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="View\FormPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormPayment.Designer.cs">
+      <DependentUpon>FormPayment.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\FormPayment.resx">
+      <DependentUpon>FormPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormAssignDetail.resx">
+      <DependentUpon>FormAssignDetail.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormDiseaseDetail.resx">
+      <DependentUpon>FormDiseaseDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormECDetail.resx">
+      <DependentUpon>FormECDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormHFDetail.resx">
+      <DependentUpon>FormHFDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormHNDetail.resx">
+      <DependentUpon>FormHNDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormHospitalBedDetail.resx">
+      <DependentUpon>FormHospitalBedDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormMaterialDetail.resx">
+      <DependentUpon>FormMaterialDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormPatientDetail.resx">
+      <DependentUpon>FormPatientDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormStaffDetail.resx">
+      <DependentUpon>FormStaffDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chart\FormBarChart.resx">
+      <DependentUpon>FormBarChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chart\FormBubbleChart.resx">
+      <DependentUpon>FormBubbleChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chart\FormHorizontal.resx">
+      <DependentUpon>FormHorizontal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chart\FormLineChart.resx">
+      <DependentUpon>FormLineChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chart\Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\EC.rdlc" />
+    <EmbeddedResource Include="Report\MEDICINEBILL.rdlc" />
+    <EmbeddedResource Include="View\FormMainReport.resx">
+      <DependentUpon>FormMainReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormReport.resx">
+      <DependentUpon>FormReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Report.xsc">
+      <DependentUpon>Report.xsd</DependentUpon>
+    </None>
+    <None Include="Report.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Report.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report.xss">
+      <DependentUpon>Report.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\7091-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\19767-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5l61_4oxe_180209-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\i88i_lnik_180209-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z4953206934367_014bc3b5af9952b68f5b02289aaceeca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2318_R0lVIEFOTiAwNzAtMTA5-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\823_generated-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vecteezy_a-patient-consults-a-doctor-and-nurse_-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Biomedical_Fresh_And_Simple_Medical_Technology_Poster_Background_Wallpaper_Image_For_Free_Download_-_Pngtree-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7317129-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1_generated-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10130-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5245433-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blue_Hospital_Medical_Western_Medicine_Poster_Background_Wallpaper_Image_For_Free_Download_-_Pngtree-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Free__Medical__Health__Research_Background_Images__Medical_Health_Poster_Background_Photo_Background_PNG_and_Vectors-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\81328514-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\81328524-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tai_xuong__1_-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tai_xuong__2_-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2001.i105.001_isometric_surgeon_doctor_flowchart-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OL1V2Q0-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5413809-effects-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7071-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\145411-OTQZ7A-227-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notification_icon-icons.com_73719.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning_attention_notification_caution_priority_high_alert_sticker_icon_258419.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\retro-error-message-illustration-in-pixel-style-vector-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\handdrawn_vector_61-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vecteezy_hospital-bed-in-circle-icon-intensive-care-unit-icon_4745587.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vecteezy_hospital-bed-in-circle-icon-intensive-care-unit-icon_4745587-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vecteezy_blood-test-vector-icon_18758827-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\40300-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vecteezy_a-medical-staff-group-of-doctors-and-nurses-standing-in_7382696-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vecteezy_3d-rendered-icon-medical-hospital-illustraion_27252245.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vecteezy_flat-isometric-illustration-concept-symbol-of-the-best_7885579-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\76b414fe4610989ff694005085de921a-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\25591-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\handdrawn_vector_61-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vecteezy_cute-adorable-cartoon-stationery-yellow-pen-pencil-boy_15737572-1-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vecteezy_cute-adorable-cartoon-stationery-yellow-pen-pencil-boy_15737572-1-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vecteezy_cute-adorable-cartoon-stationery-yellow-pen-pencil-boy_15737572-1-removebg-preview2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z5030631053744_2e9b4f844cb98aa60abede7ce3520931-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z5030631053744_2e9b4f844cb98aa60abede7ce3520931-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vecteezy_interface-plus-user-business-flat-line-filled-icon-vector_19177343-removebg-preview %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\78pf2th5-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3varbuq4-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3varbuq4-removebg-preview %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3varbuq4-removebg-preview %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3varbuq4-removebg-preview %281%292.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Telegram-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z5030867747912_8bf5b5c157107b7c880b4fc92925e287-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-eye-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-closed-eye-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2023-12-31 163312.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2023-12-31 163445.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2023-12-31 163600.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2023-12-31 163629.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2024-01-02 185836.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2024-01-02 185900.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_2024-01-02_185836-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_2024-01-02_185900-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\handdrawn_vector_61-removebg-preview2.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
