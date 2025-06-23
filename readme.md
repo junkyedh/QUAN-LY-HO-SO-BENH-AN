@@ -1,6 +1,5 @@
-# Lập trình trực quan - IT008.O11
+# Hospital Management System - Lập trình trực quan - IT008.O11
 
-# Hospital Management System
 
 ## Introduction
 
